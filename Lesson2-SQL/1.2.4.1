@@ -1,0 +1,3 @@
+SELECT date, zip, maxtemperaturef
+FROM weather
+WHERE maxtemperaturef=(SELECT MAX(maxtemperaturef) AS maximums FROM weather)

@@ -1,0 +1,7 @@
+WITH
+weather_trip
+AS(
+	SELECT trips.duration, trips.trip_id, weather.zip FROM trips JOIN weather ON trips.zip_code = weather.zip
+)
+
+SELECT * FROM weather_trip ORDER BY duration DESC LIMIT 3 

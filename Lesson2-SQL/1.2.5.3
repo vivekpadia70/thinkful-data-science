@@ -1,0 +1,6 @@
+SELECT trips.start_station, COUNT(trips.start_station), stations.dockcount 
+FROM trips 
+JOIN stations 
+ON trips.start_station = stations.name 
+GROUP BY trips.start_station, stations.dockcount 
+ORDER BY stations.dockcount DESC

@@ -1,0 +1,6 @@
+SELECT last_review, COUNT(*) AS counts
+FROM sfo_listings
+GROUP BY last_review
+ORDER BY counts DESC
+
+-- 7th and 8th months are most busy

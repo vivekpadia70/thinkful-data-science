@@ -1,0 +1,10 @@
+WITH
+calendar_dates
+AS(
+	SELECT calendar.calender_date, listings.price
+	FROM sfo_listings listings
+	JOIN sfo_calendar calendar
+	ON listings.id = calendar.listing_id
+)
+SELECT calender_date, AVG(price) FROM calendar_dates GROUP BY calender_date
+-- Average of every day of year is same so price is same for whole year
